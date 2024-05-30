@@ -1,0 +1,11 @@
+services:
+  pinger:
+    container_name: discord-pinger
+    image: aghrapidpro/discord-pinger:latest
+    restart: always
+    network_mode: bridge
+    command:
+      - https://discord.com/api/webhooks/1234567890/exampleString
+      - 192.168.69.1
+      - 192.168.69.5
+      - 192.168.69.10
