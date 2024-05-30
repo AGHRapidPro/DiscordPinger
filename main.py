@@ -1,9 +1,11 @@
+import sys
 import ping3
 import time
 import requests
 
 
-def ping_ip(url, *args):
+def ping_ip(url, args):
+    print(url, args)
     last_res = {}
     res = {}
 
@@ -26,3 +28,11 @@ def ping_ip(url, *args):
                 requests.post(url, json=data)
 
             last_res[arg] = res[arg]
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <webhook_url> <ip1> <ip2> ...")
+        sys.exit(1)
+    else:
+        ping_ip(sys.argv[1], sys.argv[2:])
