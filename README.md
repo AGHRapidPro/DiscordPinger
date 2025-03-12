@@ -25,7 +25,7 @@ Example:
 docker run -e TIMEOUT=15 -itd aghrapidpro/discord-pinger:latest https://discord.com/api/webhooks/1234567890/oqlGOtDn9JDe30 192.168.1.1 192.168.1.2
 ```
 
-The environment variable TIMEOUT allows changing the time (in seconds) between consecutive pings.
+The environment variable TIMEOUT allows changing the time (in seconds) between consecutive pings. Default value is 15.
 
 ## **How to run using docker-compose.yaml?**
 example file:
