@@ -22,8 +22,11 @@ docker buildx build -t aghrapidpro/discord-pinger:1.1 -t aghrapidpro/discord-pin
 ## **How to run as a docker container?**
 Example:
 ```
-docker run -itd aghrapidpro/discord-pinger:latest https://discord.com/api/webhooks/1234567890/oqlGOtDn9JDe30 192.168.1.1 192.168.1.2
+docker run -e TIMEOUT=15 -itd aghrapidpro/discord-pinger:latest https://discord.com/api/webhooks/1234567890/oqlGOtDn9JDe30 192.168.1.1 192.168.1.2
 ```
+
+The environment variable TIMEOUT allows changing the time (in seconds) between consecutive pings.
+
 ## **How to run using docker-compose.yaml?**
 example file:
 https://github.com/AGHRapidPro/DiscordPinger/blob/main/docker-compose.yaml
