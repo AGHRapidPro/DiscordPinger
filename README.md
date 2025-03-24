@@ -16,7 +16,7 @@ Example:
 ```
 git clone https://github.com/AGHRapidPro/DiscordPinger
 cd DiscordPinger
-docker buildx build -t aghrapidpro/discord-pinger:1.1 -t aghrapidpro/discord-pinger:latest --platform linux/386,linux/amd64,linux/arm,linux/arm64,linux/ppc64le,linux/s390x --push .
+docker buildx build -t aghrapidpro/discord-pinger:1.2 -t aghrapidpro/discord-pinger:latest --platform linux/386,linux/amd64,linux/arm64,linux/ppc64le,linux/s390x --push .
 ```
 
 ## **How to run as a docker container?**
