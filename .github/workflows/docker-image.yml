@@ -1,0 +1,19 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker buildx build --no-cache=false --build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x,linux/riscv64 --tag ${GITHUB_REPOSITORY}:latest --tag ${GITHUB_REPOSITORY}:${GITHUB_REF} . --push
+
